@@ -25,28 +25,34 @@
 
 function calc(operation) {
     var val1 = parseFloat(document.getElementById("val1").value);
-    var val2 = parseFloat(document.getElementById("val2").value);
+   
+    var val2 = document.getElementById("val2").value;
     var result;
+    if(val2 == '0') {
+        alert("ошибка: дельть на ноль нельзя");
+        
+    } else {
+        var val3 = parseFloat(val2);
     switch(operation) {
         case '+': 
-            result = val1 + val2;
+            result = val1 + val3;
             
         break;
         case '-':
-            result = val1 - val2;
+            result = val1 - val3;
             
         break;
         case '*': 
-            result = val1 * val2;
+            result = val1 * val3;
             break;
         case '/':
-        result = val1 / val2;
+        result = val1 / val3;
             break;
         default: 
         alert('операция введена не коректно');
         break;    
     }
-    
+}
 
    // result = (val2 != 0) ? val1 / val2 : "Деление на ноль";
 
