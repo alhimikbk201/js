@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+</head>
+<body>
+    <h1>Калькулятор</h1>
+    <input type="text" id="val1" value="0">
+    <button onclick="calc()">+</button>
+    <button onclick="calc()">-</button>
+    <button onclick="calc()">*</button>
+    <button onclick="calc()">/</button>
+    
+    <input type="text" id="val2" value="0">
+    =
+
+    <input type="text" id="result" readonly value="0">
+<br><br>
+
+<script>
+
+
+
+function calc() {
+    var val1 = parseFloat(document.getElementById("val1").value);
+    var val2 = parseFloat(document.getElementById("val2").value);
+
+    const result = val1 + val2;
+
+   // result = (val2 != 0) ? val1 / val2 : "Деление на ноль";
+
+
+
+    document.getElementById("result").value = result;
+}
+
+
+
+</script>
+</body>
+</html>
