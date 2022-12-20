@@ -8,10 +8,10 @@
 <body>
     <h1>Калькулятор</h1>
     <input type="text" id="val1" value="0">
-    <button onclick="calc()">+</button>
-    <button onclick="calc()">-</button>
-    <button onclick="calc()">*</button>
-    <button onclick="calc()">/</button>
+    <button onclick="calc('+')">+</button>
+    <button onclick="calc('-')">-</button>
+    <button onclick="calc('*')">*</button>
+    <button onclick="calc('/')">/</button>
     
     <input type="text" id="val2" value="0">
     =
@@ -23,11 +23,30 @@
 
 
 
-function calc() {
+function calc(operation) {
     var val1 = parseFloat(document.getElementById("val1").value);
     var val2 = parseFloat(document.getElementById("val2").value);
-
-    const result = val1 + val2;
+    var result;
+    switch(operation) {
+        case '+': 
+            result = val1 + val2;
+            
+        break;
+        case '-':
+            result = val1 - val2;
+            
+        break;
+        case '*': 
+            result = val1 * val2;
+            break;
+        case '/':
+        result = val1 / val2;
+            break;
+        default: 
+        alert('операция введена не коректно');
+        break;    
+    }
+    
 
    // result = (val2 != 0) ? val1 / val2 : "Деление на ноль";
 
